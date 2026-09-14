@@ -8,7 +8,6 @@
   <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.294.0/umd/lucide.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -24,7 +23,20 @@
 
   <script type="text/babel">
     const { useState, useEffect, useRef } = React;
-    const { Play, Pause, RotateCcw, Settings, Plus, Trash2, Edit2, Save, X, ChevronRight } = lucide;
+
+    const Icon = ({ children, className }) => (
+      <span className={className} style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', lineHeight: 1 }}>{children}</span>
+    );
+    const Play = (props) => <Icon {...props}>▶</Icon>;
+    const Pause = (props) => <Icon {...props}>❚❚</Icon>;
+    const RotateCcw = (props) => <Icon {...props}>↺</Icon>;
+    const Settings = (props) => <Icon {...props}>⚙</Icon>;
+    const Plus = (props) => <Icon {...props}>+</Icon>;
+    const Trash2 = (props) => <Icon {...props}>✕</Icon>;
+    const Edit2 = (props) => <Icon {...props}>✎</Icon>;
+    const Save = (props) => <Icon {...props}>✓</Icon>;
+    const X = (props) => <Icon {...props}>✕</Icon>;
+    const ChevronRight = (props) => <Icon {...props}>›</Icon>;
 
     function PomodoroTimer() {
       const [seconds, setSeconds] = useState(0);
